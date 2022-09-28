@@ -1,7 +1,13 @@
 # Meet-App
 Events shown in your City
 
-## TDD - Test Driven Developement
+### Built with
+* <code>React</code>
+* <code>TDD</code>
+  * <code>Enzyme</code>
+ 
+### API
+
 
 ### User-Stories:
 ![Screenshot User_Stories.png](User_Stories.png "User Stories")
