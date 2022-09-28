@@ -4,7 +4,6 @@ Events shown in your City
 ### Built with
 * <code>React</code>
 * <code>TDD</code>
-  * <code>Enzyme</code>
  
 ### API
 * <code>Google Calendar API</code>
