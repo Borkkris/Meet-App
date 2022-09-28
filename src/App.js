@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
+import NumberOfEvents from './NumberOfEvents';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       {/* Displays the Components */}
       <CitySearch />
       <EventList /> 
+      <NumberOfEvents />
     </div>
   );
 }
