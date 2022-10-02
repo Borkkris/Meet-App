@@ -2,7 +2,11 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background: linear-gradient(90deg, #4e77b8, #82a3d8);
+  background-image: url("/Users/christianbork/Desktop/CF/Full_Stack_Immersion/Achievement_4/meet/public/pictures/city.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .App * {
@@ -20,18 +24,23 @@ p {
 
 h4 {
   margin-bottom: 10px;
+  color:black;
 }
 
 .appTitle {
+  color: rgb(0, 0, 0);
   letter-spacing: -3px;
   transition: 0.5s ease-out;
   align-items: center;
   max-width: fit-content;
+  margin: 0 auto
 }
 
-.appTitle:hover {
-  letter-spacing: 4px;
-  transition: 1s ease;
+.appTitle::before,
+.appTitle::after {
+    display: block;
+    content: "";
+    border-top: 2px solid #ffffff;
 }
 
 .display-none {
@@ -46,7 +55,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #c0d0d7;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -94,13 +103,15 @@ input[type="number"] {
 }
 
 .event {
+  display: grid;
+  color: white;
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 3px solid rgb(64, 109, 222);
+  border: 2px solid #ffffff;;
   border-radius: 10px;
   position: relative;
-  background-color: #c6cbd3;
+  background-color: rgba(0, 0, 0, 0.581);
 }
 
 .event-showDetails-btn {
@@ -156,6 +167,9 @@ input[type="number"] {
   width: 200px;
   margin: 20px auto;
   text-align: center;
+  color: black;
+  font-weight: bold;
+  padding-right: 10px;
 }
 
 .button-wrapper {
