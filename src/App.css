@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: #5b8bd8;
+  background: linear-gradient(90deg, #4e77b8, #82a3d8);
 }
 
 .App * {
@@ -18,9 +18,15 @@ p {
   margin: 5px 0;
 }
 
+h4 {
+  margin-bottom: 10px;
+}
+
 .appTitle {
   letter-spacing: -3px;
   transition: 1s ease-out;
+  align-items: center;
+  max-width: fit-content;
 }
 
 .appTitle:hover {
@@ -55,7 +61,7 @@ input[type="number"] {
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
-  max-width: 300px;
+  max-width: 260px;
   margin: auto;
   position: relative;
 }
@@ -105,8 +111,8 @@ input[type="number"] {
   border-radius: 99px;
   outline: none;
   cursor: pointer;
-  transition: 0.8s ease-out;
   font-weight: bold;
+  transition: 0.8s ease-out;
 }
 
 .event-showDetails-btn:hover {
