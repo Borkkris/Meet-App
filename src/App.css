@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: #5b8bd8;
 }
 
 .App * {
@@ -15,6 +16,16 @@ ul {
 
 p {
   margin: 5px 0;
+}
+
+.appTitle {
+  letter-spacing: -3px;
+  transition: 1s ease-out;
+}
+
+.appTitle:hover {
+  letter-spacing: 4px;
+  transition: 1s ease;
 }
 
 .display-none {
@@ -80,9 +91,10 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 3px solid rgb(64, 109, 222);
+  border-radius: 10px;
   position: relative;
+  background-color: #c6cbd3;
 }
 
 .event-showDetails-btn {
@@ -90,9 +102,29 @@ input[type="number"] {
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
-  border-radius: 4px;
+  border-radius: 99px;
   outline: none;
   cursor: pointer;
+  transition: 0.8s ease-out;
+  font-weight: bold;
+}
+
+.event-showDetails-btn:hover {
+  color: black;
+  background-color: #bcdcdb;
+  transition: 0.5s;
+}
+
+.event-hideDetails-btn {
+  position: absolute;
+  background-color: #bcdcdb;
+  right: 5px;
+  bottom: 5px;
+  padding: 5px 8px;
+  border-radius: 99px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .name {

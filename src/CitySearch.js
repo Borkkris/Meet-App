@@ -45,12 +45,13 @@ handleItemClicked = (suggestion) => {
       <div className='CitySearch'>
         <input  type='text'
                 className='city'
+                placeholder='search your City'
                 value={this.state.query} // <input> will derive its value from the value of query 
                 onChange={this.handleInputChanged} //  This will detect whether any textual changes have been made on the input
                 onFocus={() => { this.setState({ showSuggestions:true }) }}
         />
         <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
-          
+
             {this.state.suggestions.map((suggestion) => (
                 <li key={suggestion}
                     onClick={() => this.handleItemClicked(suggestion)}

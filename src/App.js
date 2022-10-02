@@ -4,7 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
-import { WarningAlert } from "./Alert";
+import { WarningAlert } from './Alert';
 
 
 class App extends Component {
@@ -39,8 +39,8 @@ class App extends Component {
   render() {
     const { locations, numberOfEvents } = this.state;
     return (
-      <div className="App">
-        <h1>Meet App</h1>
+      <div className='App'>
+        <h1 className = 'appTitle'>Meet App</h1>
         <h4>Choose your nearest city</h4>
         {/* Displays the Components */}
         <CitySearch 
@@ -50,7 +50,7 @@ class App extends Component {
                     updateEvents={this.updateEvents}
                     numberOfEvents={numberOfEvents}/>
                     
-                <div className="warningAlert">
+                <div className='warningAlert'>
                     <WarningAlert text={this.state.offlineInfo} />
                 </div>
         <EventList  events={this.state.events} /> 
