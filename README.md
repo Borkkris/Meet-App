@@ -3,6 +3,7 @@ Events shown in your City
 
 ### Built with
 * <code>React</code>
+* <code>JS</code>
 * <code>TDD</code>
  
 ### API
