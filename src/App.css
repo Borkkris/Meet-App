@@ -41,7 +41,7 @@ h4 {
 .appTitle::after {
     display: block;
     content: "";
-    border-top: 2px solid #ffffff;
+    border-top: 3px solid #ffffff;
 }
 
 .display-none {
