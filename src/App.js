@@ -40,7 +40,6 @@ class App extends Component {
     const { locations, numberOfEvents } = this.state;
     return (
       <div className='App'>
-        
         <h1 className = 'appTitle'>Meet App</h1>
         <h4>Choose your nearest city</h4>
         {/* Displays the Components */}
