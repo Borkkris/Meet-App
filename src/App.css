@@ -5,7 +5,7 @@
   padding: 2% 5%;
   background-image: url("/Users/christianbork/Desktop/CF/Full_Stack_Immersion/Achievement_4/meet/public/pictures/city.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   background-size: cover;
 }
