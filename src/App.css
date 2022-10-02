@@ -115,6 +115,10 @@ input[type="number"] {
   background-color: rgba(0, 0, 0, 0.669);
 }
 
+.event:hover {
+backdrop-filter: blur(10px);
+}
+
 .event-showDetails-btn {
   position: absolute;
   right: 5px;
