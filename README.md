@@ -11,7 +11,7 @@ Events shown in your City
 ### Key Features
 * <code>Filter events by city</code>
 * <code>Show/hide event details</code>
-* S<code>pecify number of events</code>
+* <code>Specify number of events</code>
 * <code>Use the app when offline</code>
 * <code>Add an app shortcut to the home screen</code>
 * <code>View a chart showing the number of upcoming events by city</code>
