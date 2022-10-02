@@ -20,16 +20,16 @@ const mockData = [
     },
     "start": {
         "dateTime": "2020-05-19T16:00:00+02:00",
-        "timeZone": "Europe/Berlin"
+        "timeZone": "Europe/London "
     },
     "end": {
         "dateTime": "2020-05-19T17:00:00+02:00",
-        "timeZone": "Europe/Berlin"
+        "timeZone": "Europe/London"
     },
     "recurringEventId": "4eahs9ghkhrvkld72hogu9ph3e",
     "originalStartTime": {
         "dateTime": "2020-05-19T16:00:00+02:00",
-        "timeZone": "Europe/Berlin"
+        "timeZone": "Europe/London"
     },
     "iCalUID": "4eahs9ghkhrvkld72hogu9ph3e@google.com",
     "sequence": 0,
@@ -59,7 +59,7 @@ const mockData = [
     },
     "start": {
         "dateTime": "2020-05-20T14:00:00+02:00",
-        "timeZone": "Europe/Berlin"
+        "timeZone": "Europe/Berlin "
     },
     "end": {
         "dateTime": "2020-05-20T15:00:00+02:00",

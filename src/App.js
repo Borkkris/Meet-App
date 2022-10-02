@@ -4,13 +4,16 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
+import { WarningAlert } from "./Alert";
 
 
 class App extends Component {
 
   state = {
     events: [],
-    locations: []
+    locations: [],
+    locationSelected: 'all',
+    numberOfEvents: 32
   }
 
   // to make the API call and save the initial data to state
@@ -40,13 +43,17 @@ class App extends Component {
         <h1>Meet App</h1>
         <h4>Choose your nearest city</h4>
         {/* Displays the Components */}
-        <CitySearch locations={locations}
-                    updateEvents={this.updateEvents} // pass the updateEvents method as a prop to CitySearch so that you can call it inside handleItemClicked
-        />
+        <CitySearch 
+                    locations={locations} 
+                    updateEvents={this.updateEvents} />
+        <NumberOfEvents 
+                    updateEvents={this.updateEvents}
+                    numberOfEvents={numberOfEvents}/>
+                    
+                <div className="warningAlert">
+                    <WarningAlert text={this.state.offlineInfo} />
+                </div>
         <EventList  events={this.state.events} /> 
-        <NumberOfEvents updateEvents={this.updateEvents}
-                        numberOfEvents={numberOfEvents}
-        />
       </div>
     );
   }

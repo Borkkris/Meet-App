@@ -27,7 +27,7 @@ class Event extends Component {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             > 
-                            See details on Goofgle Calendar
+                            See details on Google Calendar
                             </a>
                             <p  className = "event-description">{event.description}</p>
                         </>

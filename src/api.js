@@ -39,7 +39,7 @@ const checkToken = async (accessToken) => {
   return result;
 };
 
-  //check whether there’s a path, then build the URL with the current path (or build the URL without a path using window.history.pushState()
+//check whether there’s a path, then build the URL with the current path (or build the URL without a path using window.history.pushState()
 const removeQuery = () => {
   if (window.history.pushState && window.location.pathname) {
     var newurl = window.location.protocol + '//' + window.location.host + window.location.pathname;
@@ -54,7 +54,7 @@ const removeQuery = () => {
 export const getEvents = async () => {
   NProgress.start();
 
-  if (window.location.href.startsWith("http://localhost")) {
+  if (window.location.href.startsWith('http://localhost')) {
     NProgress.done();
     return mockData;
   }
@@ -70,13 +70,13 @@ export const getEvents = async () => {
       localStorage.setItem("locations", JSON.stringify(locations));
     }
     NProgress.done();
+    
     return result.data.events;
   }
 };
 
-
 export const getAccessToken = async () => {
-  const accessToken = localStorage.getItem('access_token') // look if there is an AccessToken in the localStorage of the Users Brwoser
+  const accessToken = localStorage.getItem('access_token') // look if there is an AccessToken in the localStorage of the Users Browser
   // no accessToken found
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
@@ -84,12 +84,15 @@ export const getAccessToken = async () => {
     await localStorage.removeItem('access_token');
     const searchParams = new URLSearchParams(window.location.search);
     const code = await searchParams.get('code');
-    if(!code) {
+    if (!code) {
       const results = await axios.get('https://bufa7769da.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url');
+
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
     }
+
     return code && getToken(code);
   }
+
   return accessToken;
-}
+};
