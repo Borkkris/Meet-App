@@ -1,7 +1,7 @@
 // handle your API calls
 import { mockData } from './mock-data';
-import axios from 'axios'; // still needs to be installed!
-import NProgress from 'nprogress'; // still needs to be installed!
+import axios from 'axios'; // still needs to be installed! (ERROR!)
+import NProgress from 'nprogress'; // still needs to be installed! (ERROR!)
 
 /**
  *
@@ -14,6 +14,22 @@ export const extractLocations = (events) => {
   var locations = [...new Set(extractLocations)];
   return locations;
 };
+
+const getToken = async (code) => {
+    try {
+        const encodeCode = encodeURIComponent(code);
+
+        const response = await fetch( 'https://bufa7769da.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + encodeCode);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const { access_token } = await response.json();
+        access_token && localStorage.setItem("access_token", access_token);
+        return access_token;
+    } catch(error) {
+        error.json();
+    }
+}
 
 // Access Token Found in localStorage / checks whether it’s a valid token or not
 const checkToken = async (accessToken) => {
@@ -46,7 +62,7 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = 'https://bufa7769da.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
+    const url = 'https://bufa7769da.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
@@ -73,23 +89,7 @@ export const getAccessToken = async () => {
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
     }
-    return code && getAccessToken(code);
+    return code && getToken(code);
   }
   return accessToken;
-}
-
-const getToken = async (code) => {
-    try {
-        const encodeCode = encodeURIComponent(code);
-
-        const response = await fetch( 'https://bufa7769da.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const { access_token } = await response.json();
-        access_token && localStorage.setItem("access_token", access_token);
-        return access_token;
-    } catch(error) {
-        error.json();
-    }
 }

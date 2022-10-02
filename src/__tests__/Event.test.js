@@ -53,5 +53,4 @@ describe('<Event /> component', () => {
         EventWrapper.find('.event-hideDetails-btn').simulate('click');
         expect(EventWrapper.state('show')).toBe(false);
     });
-
 });
