@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 .App {
@@ -14,14 +21,8 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position:center;
-  background-size: cover;
-  -webkit-background-size: 100%; 
-  -moz-background-size: 100%; 
-  -o-background-size: 100%; 
+  background-size: cover; 
   background-size: 100%; 
-  -webkit-background-size: cover; 
-  -moz-background-size: cover; 
-  -o-background-size: cover; 
   background-size: cover;
 }
 
@@ -144,7 +145,9 @@ input[type="number"] {
 }
 
 .EventList{
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   padding: 0;
 }
@@ -337,6 +340,7 @@ input[type="number"] {
 }
   @media only screen and (max-width: 768px) {
     .EventList {
+      -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
     }
 
