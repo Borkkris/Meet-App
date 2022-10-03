@@ -20,7 +20,7 @@ Events shown in your City
 * <code>Google Calendar API</code>
 
 ### Meet App
-click<a href="https://borkkris.github.io/meet/"> Meet App </a> to visit
+click<a href="https://borkkris.github.io/meet/"> here </a> to visit the Meet App website
 
 ### User-Stories:
 ![Screenshot User_Stories.png](User_Stories.png "User Stories")
