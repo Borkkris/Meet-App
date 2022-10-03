@@ -37,8 +37,9 @@ h4 {
 }
 
 .appTitle {
+  padding-right: 5px;
   color: rgb(0, 0, 0);
-  letter-spacing: -3px;
+  letter-spacing: 6px;
   -webkit-transition: 0.5s ease-out;
   -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
@@ -49,6 +50,16 @@ h4 {
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: 0 auto
+}
+
+.appTitleSpan {
+  letter-spacing: -2.5px;
+  transition: 1s ease-out
+}
+
+.appTitle:hover{
+  letter-spacing: -2.5px;
+  transition: 1s ease;
 }
 
 .appTitle::before,
@@ -302,8 +313,6 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
