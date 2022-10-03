@@ -145,12 +145,12 @@ input[type="number"] {
 
 .EventList{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 0;
 }
 
 .card {
-  background-color: rgba(0, 0, 0, 0.643) !important;
+  background-color: rgba(0, 0, 0, 0.753) !important;
 }
 
 .card-body {
@@ -162,7 +162,7 @@ input[type="number"] {
 
 .card-body:hover {
 -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px)
 }
 
 .event-showDetails-btn {
@@ -320,12 +320,6 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-@media only screen and (min-width: 1200px) {
-  .EventList {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     -webkit-box-orient: horizontal;
@@ -340,9 +334,6 @@ input[type="number"] {
     min-width: auto;
     margin: 0 auto;
   }
-  .EventList {
-      grid-template-columns: 1fr 1fr;
-    }
 }
   @media only screen and (max-width: 768px) {
     .EventList {
