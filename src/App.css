@@ -11,9 +11,13 @@
   text-align: center;
   padding: 2% 5%;
   background-image: url("/Users/christianbork/Desktop/CF/Full_Stack_Immersion/Achievement_4/meet/public/pictures/city.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  -webkit-background-size: 100%; 
+  -moz-background-size: 100%; 
+  -o-background-size: 100%; 
+  background-size: 100%; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
   background-size: cover;
 }
 
@@ -328,19 +332,4 @@ input[type="number"] {
     min-width: auto;
     margin: 0 auto;
   }
-}
-@media only screen and (max-width: 767px) { 
-    .App {
-        text-align: center;
-        padding: 2% 5%;
-        background-image: url("/Users/christianbork/Desktop/CF/Full_Stack_Immersion/Achievement_4/meet/public/pictures/city.jpg");
-        -webkit-background-size: 100%; 
-        -moz-background-size: 100%; 
-        -o-background-size: 100%; 
-        background-size: 100%; 
-        -webkit-background-size: cover; 
-        -moz-background-size: cover; 
-        -o-background-size: cover; 
-        background-size: cover; 
-    }
 }
