@@ -36,20 +36,22 @@ class App extends Component {
       location = this.state.locationSelected;
     }
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ? 
-      events: events.filter((event) => event.location === location);
-      this.setState({
-        events: locationEvents 
-      });
-    });
-  }
+       let locationEvents = (location === 'all') 
+          ? events : events.filter((event) => event.location === location);
+            this.setState({
+                events: locationEvents.slice(0, eventCount),
+                numberOfEvents: eventCount,
+                locationSelected: location,
+            });
+        });
+    }
 
   render() {
     const { locations, numberOfEvents } = this.state;
     return (
       <div className='App'>
         <h1 className = 'appTitle'>Meet App</h1>
-        <h4>Choose your nearest city</h4>
+        <h4>  see upcoming events </h4>
         {/* Displays the Components */}
         <CitySearch 
                     locations={locations} 
