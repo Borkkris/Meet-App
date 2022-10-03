@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import { WarningAlert } from './Alert';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component {
@@ -51,7 +52,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1 className = 'appTitle'>Meet App</h1>
-        <h4>  see upcoming events </h4>
+        <h5>see upcoming events</h5>
         {/* Displays the Components */}
         <CitySearch 
                     locations={locations} 

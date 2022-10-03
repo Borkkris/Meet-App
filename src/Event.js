@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card, Col, Row, Button } from 'react-bootstrap';
 
 class Event extends Component {
     toggleEventDetails = () => {
@@ -10,42 +11,51 @@ class Event extends Component {
         const { event } = this.props
         return ( 
             <>
-                <div className='event'>
-                    <h1 className='event-title'>{event.title}</h1>
-                    <p  className='event-info'>
-                        {event.start.dateTime} 
-                        {event.start.timeZone}
-                        {event.location}
-                    </p>
-                    {/* // from here shown when its expanded */}
-                    {this.state.show && (
-                        <>
-                            <h2 className ='event-about-title'>About event:</h2>
-                            <p  className = 'event-description'>{event.description}</p>
-                            <a  className='event-htmlLink'
-                                href={event.htmlLink}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            > 
-                            See details on Google Calendar
-                            </a>
-                            <p  className = 'event-description'>{event.description}</p>
-                        </>
-                    )}
-                    {!this.state.show ? (
-                        <button className='event-showDetails-btn'
-                                onClick={this.toggleEventDetails}
-                        >
-                            Show details
-                        </button>
-                    ) : (
-                        <button className='event-hideDetails-btn'
-                                onClick={this.toggleEventDetails}
-                        >
-                            hide details
-                        </button>
-                    )}
-                </div>
+                <Row>
+                    <Col>
+                    <Card border='light' className="m-2" >
+                        <Card.Body>
+                            <Card.Title><h1>{event.title}</h1></Card.Title>
+                            
+                            <p  className='event-info'>
+                                {event.start.dateTime} 
+                                {event.start.timeZone}
+                                {event.location}
+                            </p>
+                            {/* // from here shown when its expanded */}
+                            {this.state.show && (
+                                <>
+                                    <h2 className ='event-about-title'>About event:</h2>
+                                    <p  className = 'event-description'>{event.description}</p>
+                                    <Card.Link href={event.htmlLink}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    > 
+                                    See details on Google Calendar
+                                    </Card.Link>
+                                    <p  className = 'event-description'>{event.description}</p>
+                                </>
+                                )}
+
+                                {!this.state.show ? (
+                                    <Button className='event-showDetails-btn'
+                                            variant='outline-light'
+                                            onClick={this.toggleEventDetails}
+                                    >
+                                        Show details
+                                    </Button>
+                                ) : (
+                                    <Button className='event-hideDetails-btn'
+                                            variant='outline-light'
+                                            onClick={this.toggleEventDetails}
+                                    >
+                                        hide details
+                                    </Button>
+                                )}
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
             </>
         );
     };
