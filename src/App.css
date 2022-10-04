@@ -16,7 +16,7 @@
 
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 2% 10%;
   background-image: url("/Users/christianbork/Desktop/CF/Full_Stack_Immersion/Achievement_4/meet/public/pictures/city.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -150,6 +150,7 @@ input[type="number"] {
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   padding: 0;
+  grid-gap: 20px;
 }
 
 .card {
@@ -158,9 +159,10 @@ input[type="number"] {
 
 .card-body {
   color: white !important;
-  padding: 10px 10px 35px;
+  padding: 10px 20px 35px;
   text-align: left;
-
+  font-size:18px;
+  height: 9em;
 }
 
 .card-body:hover {
