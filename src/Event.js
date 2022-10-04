@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Col, Row, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 class Event extends Component {
     toggleEventDetails = () => {
@@ -11,32 +11,30 @@ class Event extends Component {
         const { event } = this.props
         return ( 
             <>
-                <Row>
-                    <Col>
-                    <Card border='light'>
-                        <Card.Body>
-                            <Card.Title><h1>{event.title}</h1></Card.Title>
-                            
-                            <p  className='event-info'>
-                                {event.start.dateTime} 
-                                {event.start.timeZone}
-                                {event.location}
-                            </p>
-                            {/* // from here shown when its expanded */}
-                            {this.state.show && (
-                                <>
-                                    <h2 className ='event-about-title'>About event:</h2>
-                                    <p  className = 'event-description'>{event.description}</p>
-                                    <Card.Link href={event.htmlLink}
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    > 
-                                    See details on Google Calendar
-                                    </Card.Link>
-                                    <p  className = 'event-description'>{event.description}</p>
-                                </>
-                                )}
-
+                <Card border='light'>
+                    <Card.Body>
+                        <Card.Title><h1>{event.title}</h1></Card.Title>
+                    
+                        <p  className='event-info'>
+                            {event.start.dateTime} 
+                            {event.start.timeZone}
+                            {event.location}
+                        </p>
+                        {/* // from here shown when its expanded */}
+                        {this.state.show && (
+                            <>
+                                <h2 className ='event-about-title'>About event:</h2>
+                                <p  className = 'event-description'>{event.description}</p>
+                                <Card.Link href={event.htmlLink}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                > 
+                                See details on Google Calendar
+                                </Card.Link>
+                                <p  className = 'event-description'>{event.description}</p>
+                            </>
+                            )}
+                            <Card.Footer>
                                 {!this.state.show ? (
                                     <Button className='event-showDetails-btn'
                                             variant='outline-light'
@@ -44,7 +42,7 @@ class Event extends Component {
                                     >
                                         Show details
                                     </Button>
-                                ) : (
+                                    ) : (
                                     <Button className='event-hideDetails-btn'
                                             variant='outline-light'
                                             onClick={this.toggleEventDetails}
@@ -52,10 +50,9 @@ class Event extends Component {
                                         hide details
                                     </Button>
                                 )}
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
+                            </Card.Footer>
+                    </Card.Body>
+                </Card>
             </>
         );
     };

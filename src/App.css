@@ -9,7 +9,7 @@
 
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 2% 2%;
   background-image: url("/Users/christianbork/Desktop/CF/Full_Stack_Immersion/Achievement_4/meet/public/pictures/city.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -43,6 +43,7 @@ h5 {
   padding-bottom: 10px;
   color:black;
 }
+
 
 .appTitle {
   padding-right: 5px;
@@ -164,36 +165,17 @@ input[type="number"] {
 -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
 }
-
-.event-showDetails-btn {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  outline: none;
-  cursor: pointer;
-  font-weight: bold;
-  -webkit-transition: 0.8s ease-out;
-  -o-transition: 0.8s ease-out;
-  transition: 0.8s ease-out;
+.card-footer {
+  display: flex;
 }
-
-.event-showDetails-btn:hover {
-  color: black;
-  background-color: #bcdcdb;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+.event-showDetails-btn {
+  position:relative;
+  margin-left: auto;
 }
 
 .event-hideDetails-btn {
-  position: absolute;
-  background-color: #bcdcdb;
-  right: 5px;
-  bottom: 5px;
-  border-radius: 99px;
-  outline: none;
-  cursor: pointer;
-  font-weight: bold;
+  position: relative;
+  margin-left: auto;
 }
 
 .name {
