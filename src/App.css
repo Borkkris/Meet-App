@@ -339,10 +339,18 @@ input[type="number"] {
     margin: 0 auto;
   }
 }
-  @media only screen and (max-width: 768px) {
-    .EventList {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-    }
+
+@media only screen and (max-width: 992px) {
+  .EventList {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .EventList {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
 
 }
