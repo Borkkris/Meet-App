@@ -5,13 +5,6 @@
 * Browsers: last 4 version
 */
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 .App {
@@ -21,8 +14,14 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: cover; 
-  background-size: cover; 
+  background-size: cover;
+  -webkit-background-size: 100%; 
+  -moz-background-size: 100%; 
+  -o-background-size: 100%; 
+  background-size: 100%; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
   background-size: cover;
 }
 
@@ -145,28 +144,25 @@ input[type="number"] {
 }
 
 .EventList{
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0;
+  display:grid;
   grid-gap: 20px;
+  padding: 0;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card {
-  background-color: rgba(0, 0, 0, 0.753) !important;
+  background-color: rgba(0, 0, 0, 0.643) !important;
 }
 
 .card-body {
   color: white !important;
-  padding: 10px 20px 35px;
+  padding: 10px 10px 35px;
   text-align: left;
-  font-size: 18px;
 }
 
 .card-body:hover {
 -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px)
+        backdrop-filter: blur(10px);
 }
 
 .event-showDetails-btn {
@@ -324,13 +320,6 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-@media only screen and (max-width: 1325px) {
-  .EventList {
-        -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     -webkit-box-orient: horizontal;
@@ -347,10 +336,8 @@ input[type="number"] {
   }
 }
 
-@media only screen and (max-width: 882px) {
-  .EventList {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-  }
-
+@media only screen and (max-width: 992px) {
+  .EventList{
+  grid-template-columns: 1fr;
 }
+ }
