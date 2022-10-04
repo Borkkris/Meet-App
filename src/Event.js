@@ -13,7 +13,7 @@ class Event extends Component {
             <>
                 <Row>
                     <Col>
-                    <Card border='light' >
+                    <Card border='light'className='h-100' >
                         <Card.Body>
                             <Card.Title><h1>{event.title}</h1></Card.Title>
                             
