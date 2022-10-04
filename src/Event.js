@@ -14,14 +14,15 @@ class Event extends Component {
                 <Card border='light'>
                     <Card.Body>
                         <Card.Header>
-                            <h1>{event.summary}</h1>
+                            <h1 className='event-summary'>{event.summary}</h1>
                         </Card.Header>
 
-                        <p  className='event-info'>
+                        <p  className='event-info'> 
                             {event.start.dateTime} 
                             {event.start.timeZone}
                             {event.location}
                         </p>
+                        
                         {/* // from here shown when its expanded */}
                         {this.state.show && (
                             <>

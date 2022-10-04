@@ -15,12 +15,12 @@ describe('<Event /> component', () => {
         expect(EventWrapper.state('show')).toBe(false);
     });
     
-    test('render element event-title in event item', () => {
-        expect(EventWrapper.find('.event-title')).toHaveLength(1);
+    test('render element event-summary in event item', () => {
+        expect(EventWrapper.find('.event-summary')).toHaveLength(1);
     });
 
-    test('render element event-title correctly', () => {
-        expect(EventWrapper.find('.event-title').text()).toBe(event.title);
+    test('render element event-summary correctly', () => {
+        expect(EventWrapper.find('.event-summary').text()).toBe(event.summary);
     });
 
     test('render element event-info in event item', () => {

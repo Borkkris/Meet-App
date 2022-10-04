@@ -152,6 +152,10 @@ input[type="number"] {
   grid-template-columns: 1fr 1fr;
 }
 
+.card-header {
+  padding: 0 !important;
+}
+
 .card {
   background-color: rgba(0, 0, 0, 0.643) !important;
 }
