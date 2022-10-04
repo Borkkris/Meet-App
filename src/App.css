@@ -161,8 +161,7 @@ input[type="number"] {
   color: white !important;
   padding: 10px 20px 35px;
   text-align: left;
-  font-size:18px;
-  height: 9em;
+  font-size: 18px;
 }
 
 .card-body:hover {
