@@ -13,18 +13,18 @@ class Event extends Component {
             <>
                 <Row>
                     <Col>
-                    <Card border='light'className='h-100' >
-                        <Card.Body>
-                            <Card.Title><h1>{event.title}</h1></Card.Title>
+                        <Card border='light' >
+                            <Card.Body>
+                                <Card.Title><h1>{event.title}</h1></Card.Title>
                             
-                            <p  className='event-info'>
-                                {event.start.dateTime} 
-                                {event.start.timeZone}
-                                {event.location}
-                            </p>
-                            {/* // from here shown when its expanded */}
-                            {this.state.show && (
-                                <>
+                                <p  className='event-info'>
+                                    {event.start.dateTime} 
+                                    {event.start.timeZone}
+                                    {event.location}
+                                </p>
+                                {/* // from here shown when its expanded */}
+                                {this.state.show && (
+                                    <>
                                     <h2 className ='event-about-title'>About event:</h2>
                                     <p  className = 'event-description'>{event.description}</p>
                                     <Card.Link href={event.htmlLink}
@@ -36,26 +36,27 @@ class Event extends Component {
                                     <p  className = 'event-description'>{event.description}</p>
                                 </>
                                 )}
-
-                                {!this.state.show ? (
-                                    <Button className='event-showDetails-btn'
-                                            variant='outline-light'
-                                            onClick={this.toggleEventDetails}
-                                    >
-                                        Show details
-                                    </Button>
-                                ) : (
-                                    <Button className='event-hideDetails-btn'
-                                            variant='outline-light'
-                                            onClick={this.toggleEventDetails}
-                                    >
-                                        hide details
-                                    </Button>
-                                )}
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
+                                <Card.Footer>
+                                    {!this.state.show ? (
+                                        <Button className='event-showDetails-btn'
+                                                variant='outline-light'
+                                                onClick={this.toggleEventDetails}
+                                        >
+                                            Show details
+                                        </Button>
+                                    ) : (
+                                        <Button className='event-hideDetails-btn'
+                                                variant='outline-light'
+                                                onClick={this.toggleEventDetails}
+                                        >
+                                            hide details
+                                        </Button>
+                                    )}
+                                </Card.Footer>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             </>
         );
     };
