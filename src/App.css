@@ -324,6 +324,13 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
+@media only screen and (max-width: 1265px) {
+  .EventList {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     -webkit-box-orient: horizontal;
@@ -347,7 +354,7 @@ input[type="number"] {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 859px) {
   .EventList {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;

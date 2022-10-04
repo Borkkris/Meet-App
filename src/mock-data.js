@@ -20,7 +20,7 @@ const mockData = [
     },
     "start": {
         "dateTime": "2020-05-19T16:00:00+02:00",
-        "timeZone": "Europe/London "
+        "timeZone": "Europe/London"
     },
     "end": {
         "dateTime": "2020-05-19T17:00:00+02:00",
@@ -59,7 +59,7 @@ const mockData = [
     },
     "start": {
         "dateTime": "2020-05-20T14:00:00+02:00",
-        "timeZone": "Europe/Berlin "
+        "timeZone": "Europe/Berlin"
     },
     "end": {
         "dateTime": "2020-05-20T15:00:00+02:00",
