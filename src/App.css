@@ -324,7 +324,7 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-@media only screen and (max-width: 1265px) {
+@media only screen and (max-width: 1325px) {
   .EventList {
         -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -347,14 +347,7 @@ input[type="number"] {
   }
 }
 
-@media only screen and (max-width: 992px) {
-  .EventList {
-        -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media only screen and (max-width: 859px) {
+@media only screen and (max-width: 882px) {
   .EventList {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
