@@ -13,8 +13,10 @@ class Event extends Component {
             <>
                 <Card border='light'>
                     <Card.Body>
-                        <h1>{event.title}</h1>
-                    
+                        <Card.Header>
+                            <h1>{event.title}</h1>
+                        </Card.Header>
+                        
                         <p  className='event-info'>
                             {event.start.dateTime} 
                             {event.start.timeZone}

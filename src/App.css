@@ -72,6 +72,7 @@ h5 {
 .display-none {
   display: none;
 }
+
 .showSuggestions {
   display: block;
 }
@@ -165,9 +166,11 @@ input[type="number"] {
 -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
 }
+
 .card-footer {
   display: flex;
 }
+
 .event-showDetails-btn {
   position:relative;
   margin-left: auto;
