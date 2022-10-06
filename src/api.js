@@ -50,10 +50,10 @@ const removeQuery = () => {
   }
 };
 
-//limit the mock data to localhost
+// imit the mock data to localhost
 export const getEvents = async () => {
   NProgress.start();
-
+// a check to allow mock data to be returned when your app is hosted locally
   if (window.location.href.startsWith('http://localhost')) {
     NProgress.done();
     return mockData;

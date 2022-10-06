@@ -156,8 +156,8 @@ input[type="number"] {
   padding: 0 !important;
 }
 
-.card {
-  background-color: rgba(0, 0, 0, 0.643) !important;
+.event {
+  background-color: rgba(26, 26, 26, 0.643) !important;
 }
 
 .card-body {
