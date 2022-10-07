@@ -11,7 +11,7 @@ class Event extends Component {
         const { event } = this.props
         return ( 
             <>
-                <Card className='event' border='light'>
+                <Card border='light'>
                     <Card.Body>
                         <Card.Header>
                             <h1 className='event-summary'>{event.summary}</h1>

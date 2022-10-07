@@ -24,11 +24,12 @@ defineFeature(feature, test => {
         then('the user should see the list of upcoming events from all locations', () => {
             AppWrapper.update();
             expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
-        });
+    });
     });
 
     test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
         let CitySearchWrapper;
+        let locations = extractLocations(mockData);
         given('the main page is open', () => {
             CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}}         
                                                     locations={locations} />);
