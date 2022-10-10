@@ -14,32 +14,32 @@ class Alert extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Alert">
                 <p style={this.getStyle()}>{this.props.text}</p>
             </div>
         );
     }
 }
-
+// Subclass InfoAlert
 class InfoAlert extends Alert {
     constructor(props) {
         super(props);
-        this.color = 'darkseagreen';
+        this.color = 'blue';
     }
 }
-
+// Subclass WarningAlert
 class WarningAlert extends Alert {
     constructor(props) {
         super(props);
-        this.color = 'yellow';
+        this.color = 'orange';
     }
 }
-
+// Subclass ErrorAlert
 class ErrorAlert extends Alert {
     constructor(props) {
         super(props);
-        this.color = 'orangered';
+        this.color = 'red';
     }
 }
 
-export{InfoAlert, WarningAlert, ErrorAlert};
+export{ InfoAlert, WarningAlert, ErrorAlert };

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { InfoAlert } from './Alert';
 
 class CitySearch extends Component {
   state = {
@@ -43,6 +44,7 @@ handleItemClicked = (suggestion) => {
   render() {
     return (
       <div className='CitySearch'>
+        <InfoAlert test={this.state.infoText} />
         <input  type='text'
                 className='city'
                 placeholder='search your City'
