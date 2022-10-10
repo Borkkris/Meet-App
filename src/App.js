@@ -19,10 +19,23 @@ class App extends Component {
 
   // to make the API call and save the initial data to state
   componentDidMount() {
+
     getEvents().then((events) => {
       this.setState({ events, locations: extractLocations(events) });
     });
+
+    if (!navigator.onLine) {
+      this.setState({
+        warningText:
+          "It seems that you're not connected to the internet, your data was loaded from the cache.",
+        });
+      } else {
+        this.setState({
+          warningText: '',
+        });
+      }
   }
+  
   componentWillUnmount(){
     this.mounted = false;
   }

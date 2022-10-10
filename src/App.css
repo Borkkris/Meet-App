@@ -224,11 +224,6 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
-  position: fixed;
-  top: 20px;
-}
-
 .data-vis-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
