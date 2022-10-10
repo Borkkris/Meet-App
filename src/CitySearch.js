@@ -44,7 +44,7 @@ handleItemClicked = (suggestion) => {
   render() {
     return (
       <div className='CitySearch'>
-        <InfoAlert test={this.state.infoText} />
+        <InfoAlert text={this.state.infoText} />
         <input  type='text'
                 className='city'
                 placeholder='search your City'
