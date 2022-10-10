@@ -24,10 +24,11 @@ class App extends Component {
       this.setState({ events, locations: extractLocations(events) });
     });
 
+    // for the WarningAlert (Idk how to make it work, probably it needs access to the cache or so?)
     if (!navigator.onLine) {
       this.setState({
         warningText:
-          "It seems that you're not connected to the internet, your data was loaded from the cache.",
+          "Please check your Internet connection!",
         });
       } else {
         this.setState({
@@ -35,7 +36,7 @@ class App extends Component {
         });
       }
   }
-  
+
   componentWillUnmount(){
     this.mounted = false;
   }
@@ -75,7 +76,7 @@ class App extends Component {
                     numberOfEvents={numberOfEvents}/>
                     
                 <div className='warningAlert'>
-                    <WarningAlert text={this.state.offlineInfo} />
+                    <WarningAlert text={this.state.warningText} />
                 </div>
         <EventList  events={this.state.events} /> 
       </div>
