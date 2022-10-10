@@ -18,7 +18,7 @@ handleInputChanged = (event) => {
     if (suggestions.length === 0) {
       return this.setState({
         query: value,
-        infoText: `The City you were looking for doesn't exist. Please look for another City`,
+        infoText: 'We can not find the city you are looking for. Please try another city',
       });
     } else {
       return this.setState({
