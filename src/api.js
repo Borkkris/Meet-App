@@ -32,7 +32,7 @@ const getToken = async (code) => {
 }
 
 // Access Token Found in localStorage / checks whether it’s a valid token or not
-const checkToken = async (accessToken) => {
+export const checkToken = async (accessToken) => {
   const result = await fetch( `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`)
     .then((res) => res.json())
     .catch ((error) => error.json());

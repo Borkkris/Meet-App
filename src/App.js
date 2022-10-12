@@ -3,9 +3,10 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { extractLocations, getEvents } from './api';
+import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { WarningAlert } from './Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import WelcomeScreen from './WelcomeScreen';
 
 
 class App extends Component {
@@ -13,16 +14,31 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
+    showWelcomeScreen: undefined, // This state will be used as a flag to determine when to render the welcome screen as follows: true will mean “show the welcome screen,” false will mean “hide it to show the other components,” and undefined will be used to render an empty div until the state gets either true or false:
     locationSelected: 'all',
     numberOfEvents: 32
   }
 
   // to make the API call and save the initial data to state
-  componentDidMount() {
+  async componentDidMount() {
+  this.mounted = true;
+  // trying to get the token from localStorage
+  const accessToken = localStorage.getItem('access_token');
+  // trying to verify it using another function "checkToken()"
+  // If there’s an error in the object returned by checkToken(), the variable isTokenValid will be assigned with the value false; otherwise, it will be true
+  const isTokenValid = (await checkToken(accessToken)).error ? false : true;
+  const searchParams = new URLSearchParams(window.location.search);
+  // the application will be re-launched, only with the code parameter in the URL search field after your site’s domain
+  const code = searchParams.get("code");
+  this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+  if ((code || isTokenValid) && this.mounted) {
 
     getEvents().then((events) => {
-      this.setState({ events, locations: extractLocations(events) });
-    });
+      if (this.mounted) {
+        this.setState({ events, locations: extractLocations(events) });
+      }
+    }); 
+  }
 
     // for the WarningAlert (Idk how to make it work, probably it needs access to the cache or so?)
     if (!navigator.onLine) {
@@ -62,6 +78,7 @@ class App extends Component {
     }
 
   render() {
+    if (this.state.showWelcomeScreen === undefined) return <div className="App" />
     const { locations, numberOfEvents } = this.state;
     return (
       <div className='App'>
@@ -79,6 +96,8 @@ class App extends Component {
                     <WarningAlert text={this.state.warningText} />
                 </div>
         <EventList  events={this.state.events} /> 
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+        getAccessToken={() => { getAccessToken() }} />
       </div>
     );
   }
