@@ -20,21 +20,21 @@ class Alert extends Component {
         );
     }
 }
-// Subclass InfoAlert
+// Subclass InfoAlert / CitySearch
 class InfoAlert extends Alert {
     constructor(props) {
         super(props);
         this.color = 'blue';
     }
 }
-// Subclass WarningAlert
+// Subclass WarningAlert / App
 class WarningAlert extends Alert {
     constructor(props) {
         super(props);
         this.color = 'orange';
     }
 }
-// Subclass ErrorAlert
+// Subclass ErrorAlert / NumberOfEvent
 class ErrorAlert extends Alert {
     constructor(props) {
         super(props);
