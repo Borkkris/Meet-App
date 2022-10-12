@@ -53,10 +53,11 @@ handleItemClicked = (suggestion) => {
                 onChange={this.handleInputChanged} //  This will detect whether any textual changes have been made on the input
                 onFocus={() => { this.setState({ showSuggestions:true }) }}
         />
-        <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
+        <ul className='suggestions' style={this.state.showSuggestions ? {}: { display: 'none' }}>
 
             {this.state.suggestions.map((suggestion) => (
                 <li key={suggestion}
+                    class='suggestionsList'
                     onClick={() => this.handleItemClicked(suggestion)}
                     >
                         {suggestion}</li>

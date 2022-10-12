@@ -31,7 +31,7 @@
 }
 
 ul {
-  padding: 0;
+  padding: 0 !important;
   list-style: none;
 }
 
@@ -73,10 +73,6 @@ h5 {
   display: none;
 }
 
-.showSuggestions {
-  display: block;
-}
-
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -113,7 +109,6 @@ input[type="number"] {
 
 .suggestions {
   width: 250px;
-  position: absolute;
   z-index: 2;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
