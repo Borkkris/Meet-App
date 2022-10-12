@@ -59,7 +59,7 @@ export const getEvents = async () => {
     return mockData;
   }
 
-  // !navigator.onLine checks whether the user is offline, but this only works if there’s no internet.  
+  // "!navigator.onLine" checks whether the user is offline, but this only works if there’s no internet.  
   // If they are offline, the stored event list is loaded, parsed, and returned as events
   // olace this code before the "const token = await getAccessToken" line. This is because you don’t need to check for an access token if the user is offline 
    if (!navigator.onLine) {

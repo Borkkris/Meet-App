@@ -28,7 +28,7 @@ class App extends Component {
     if (!navigator.onLine) {
       this.setState({
         warningText:
-          "Please check your Internet connection!",
+          "List of events has been loaded from your cache! Please check your Internet connection!",
         });
       } else {
         this.setState({
