@@ -1,7 +1,7 @@
 // handle your API calls
 import { mockData } from './mock-data';
-import axios from 'axios'; // still needs to be installed! (ERROR!)
-import NProgress from 'nprogress'; // still needs to be installed! (ERROR!)
+import axios from 'axios';
+import NProgress from 'nprogress';
 
 /**
  *
@@ -58,6 +58,16 @@ export const getEvents = async () => {
     NProgress.done();
     return mockData;
   }
+
+  // !navigator.onLine checks whether the user is offline, but this only works if there’s no internet.  
+  // If they are offline, the stored event list is loaded, parsed, and returned as events
+  // olace this code before the "const token = await getAccessToken" line. This is because you don’t need to check for an access token if the user is offline 
+   if (!navigator.onLine) {
+      const data = localStorage.getItem('lastEvents');
+      NProgress.done();
+      return data ? JSON.parse(data).events : [];
+    }
+
   const token = await getAccessToken();
 
   if (token) {
@@ -66,7 +76,8 @@ export const getEvents = async () => {
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
-      localStorage.setItem("lastEvents", JSON.stringify(result.data));
+      // whether there are any results, then save them to localstorage
+      localStorage.setItem("lastEvents", JSON.stringify(result.data)); // JSON.stringify(events) (converts the list into a string) function is necessary because events is a list, but localStorage can only store strings.
       localStorage.setItem("locations", JSON.stringify(locations));
     }
     NProgress.done();
