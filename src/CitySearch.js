@@ -8,6 +8,7 @@ class CitySearch extends Component {
     suggestions: [],
     showSuggestions: false
   }
+  
 // change handle
 handleInputChanged = (event) => {
     const value = event.target.value;
