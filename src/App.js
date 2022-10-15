@@ -7,7 +7,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { WarningAlert } from './Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WelcomeScreen from './WelcomeScreen';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 
 
 class App extends Component {
@@ -107,16 +107,17 @@ class App extends Component {
                     <WarningAlert text={this.state.warningText} />
                 </div>
                 {/* Chart */}
-                <ScatterChart width={900
-                } height={250}
-                  margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis type="category" dataKey="city" name="city" />
-                  <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
-                  <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                  <Legend />
-                  <Scatter data={this.getData()} fill="#8884d8" />
-                </ScatterChart>
+                <ResponsiveContainer height={400} >
+                  <ScatterChart width={900} height={250}
+                    margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis type="category" dataKey="city" name="city" />
+                    <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+                    <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                    <Legend />
+                    <Scatter data={this.getData()} fill="#8884d8" />
+                  </ScatterChart>
+                </ResponsiveContainer>
 
         <EventList  events={this.state.events} /> 
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
