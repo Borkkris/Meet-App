@@ -7,6 +7,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { WarningAlert } from './Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WelcomeScreen from './WelcomeScreen';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
 
 class App extends Component {
@@ -57,6 +58,16 @@ class App extends Component {
     this.mounted = false;
   }
 
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift() // shift: to get the first element in the array, which is the name of the city
+      return {city, number};
+    })
+    return data;
+  };
+
   updateEvents = (location, eventCount) => {
     if (eventCount === undefined) {
       eventCount = this.state.numberOfEvents;
@@ -95,6 +106,17 @@ class App extends Component {
                 <div className='warningAlert'>
                     <WarningAlert text={this.state.warningText} />
                 </div>
+                {/* Chart */}
+                <ScatterChart width={730} height={250}
+                  margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis type="category" dataKey="city" name="city" />
+                  <YAxis type="number" dataKey="number" name="number of events" />
+                  <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                  <Legend />
+                  <Scatter data={this.getData()} fill="#8884d8" />
+                </ScatterChart>
+
         <EventList  events={this.state.events} /> 
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
         getAccessToken={() => { getAccessToken() }} />
