@@ -7,7 +7,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { WarningAlert } from './Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WelcomeScreen from './WelcomeScreen';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 
 
 class App extends Component {
@@ -106,15 +106,17 @@ class App extends Component {
                 <div className='warningAlert'>
                     <WarningAlert text={this.state.warningText} />
                 </div>
-                {/* Chart */}
+                {/* Pie Chart */}
+                
+
+                {/* ScatteredChart */}
                 <ResponsiveContainer height={400} >
                   <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis type="category" dataKey="city" name="city" />
                     <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
                     <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                    <Legend />
-                    <Scatter data={this.getData()} fill="#1a1a1aa4" />
+                    <Scatter data={this.getData()} fill="#ffa500" />
                   </ScatterChart>
                 </ResponsiveContainer>
 
