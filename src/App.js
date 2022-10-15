@@ -107,15 +107,15 @@ class App extends Component {
                     <WarningAlert text={this.state.warningText} />
                 </div>
                 {/* Chart */}
-                <ResponsiveContainer height={400} >
-                  <ScatterChart width={900} height={250}
+                <ResponsiveContainer fill="#1a1a1aa4" height={400} >
+                  <ScatterChart width={800} height={250} 
                     margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis type="category" dataKey="city" name="city" />
                     <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
                     <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                     <Legend />
-                    <Scatter data={this.getData()} fill="#8884d8" />
+                    <Scatter data={this.getData()} fill="#1a1a1aa4" />
                   </ScatterChart>
                 </ResponsiveContainer>
 
