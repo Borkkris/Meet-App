@@ -107,7 +107,8 @@ class App extends Component {
                     <WarningAlert text={this.state.warningText} />
                 </div>
                 {/* Chart */}
-                <ScatterChart class="chart" width={800} height={250}
+                <ScatterChart width={900
+                } height={250}
                   margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis type="category" dataKey="city" name="city" />

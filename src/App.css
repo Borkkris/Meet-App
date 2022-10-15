@@ -140,11 +140,6 @@ input[type="number"] {
   display: none;
 }
 
-.chart {
-  -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-}
-
 .EventList{
   display:grid;
   grid-template-columns: 1fr 1fr;
