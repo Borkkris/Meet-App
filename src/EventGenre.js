@@ -21,7 +21,7 @@ const EventGenre = ({ events }) => {
   }, [events]);
 
     return (
-        
+
          <ResponsiveContainer height={350}>
             <PieChart width={100} height={350}>
                 <Pie
@@ -42,6 +42,7 @@ const EventGenre = ({ events }) => {
                 <Legend verticalAlign="bottom" height={36} />
             </PieChart>
         </ResponsiveContainer>
+        
     );
 }
 
