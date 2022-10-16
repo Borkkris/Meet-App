@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { PieChart, Pie, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer, Cell, Legend } from 'recharts';
 
 
 
 const EventGenre = ({ events }) => {
     const [data, setData] = useState([]);
+    const colors = ['#ffffff', '#969696', '#6e6e6e', '#3c3c3c', '#000000'];
 
     // The useEffect function will run when there’s a change to the events prop.
     useEffect(() => {
@@ -20,19 +21,24 @@ const EventGenre = ({ events }) => {
   }, [events]);
 
     return (
-        <ResponsiveContainer width="100%" height="100%">
-            <PieChart width={400} height={400}>
+         <ResponsiveContainer height={350}>
+            <PieChart width={100} height={350}>
                 <Pie
-                    data={data}
-                    cx={200}
-                    cy={200}
-                    labelLine={false}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
+                data={data}
+                cx={200}
+                cy={200}
+                labelLine={false}
+                outerRadius={70}
+                fill="#8884d8"
+                dataKey="value"
+                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`
+                }
                 >
-               </Pie>
+                {data.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={colors[index]} />
+                ))}
+                </Pie>
+                <Legend verticalAlign="bottom" height={36} />
             </PieChart>
         </ResponsiveContainer>
     );

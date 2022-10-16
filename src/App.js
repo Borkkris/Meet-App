@@ -109,7 +109,6 @@ class App extends Component {
         </div>
         <div className="data-vis-wrapper">
           <EventGenre events={events} />
-          
           {/* ScatteredChart */}
           <ResponsiveContainer height={400} >
             <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
@@ -122,7 +121,8 @@ class App extends Component {
           </ResponsiveContainer>
         </div>
 
-        <EventList  events={this.state.events} /> 
+        <EventList events={this.state.events} />
+         
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
         getAccessToken={() => { getAccessToken() }} />
       </div>
