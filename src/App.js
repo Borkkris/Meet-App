@@ -107,6 +107,7 @@ class App extends Component {
         <div className='warningAlert'>
           <WarningAlert text={this.state.warningText} />
         </div>
+        
         <div className="data-vis-wrapper">
           <EventGenre events={events} />
           {/* ScatteredChart */}
@@ -122,7 +123,7 @@ class App extends Component {
         </div>
 
         <EventList events={this.state.events} />
-         
+
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
         getAccessToken={() => { getAccessToken() }} />
       </div>
