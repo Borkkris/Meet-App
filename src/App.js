@@ -3,6 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { WarningAlert } from './Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -90,7 +91,7 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
-    const { locations, numberOfEvents } = this.state;
+    const { locations, numberOfEvents, events } = this.state;
     return (
       <div className='App'>
         <h1 className = 'appTitle'>Meet App</h1>
@@ -103,22 +104,23 @@ class App extends Component {
                     updateEvents={this.updateEvents}
                     numberOfEvents={numberOfEvents}/>
                     
-                <div className='warningAlert'>
-                    <WarningAlert text={this.state.warningText} />
-                </div>
-                {/* Pie Chart */}
-                
-
-                {/* ScatteredChart */}
-                <ResponsiveContainer height={400} >
-                  <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis type="category" dataKey="city" name="city" />
-                    <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
-                    <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                    <Scatter data={this.getData()} fill="#ffa500" />
-                  </ScatterChart>
-                </ResponsiveContainer>
+        <div className='warningAlert'>
+          <WarningAlert text={this.state.warningText} />
+        </div>
+        <div className="data-vis-wrapper">
+          <EventGenre events={events} />
+          
+          {/* ScatteredChart */}
+          <ResponsiveContainer height={400} >
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="category" dataKey="city" name="city" />
+              <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Scatter data={this.getData()} fill="#ffa500" />
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
 
         <EventList  events={this.state.events} /> 
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
