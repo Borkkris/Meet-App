@@ -29,7 +29,7 @@ const EventGenre = ({ events }) => {
                 cx={200}
                 cy={200}
                 labelLine={false}
-                outerRadius={70}
+                outerRadius={80}
                 fill="#8884d8"
                 dataKey="value"
                 label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`
@@ -42,7 +42,7 @@ const EventGenre = ({ events }) => {
                 <Legend verticalAlign="bottom" height={36} />
             </PieChart>
         </ResponsiveContainer>
-        
+
     );
 }
 
