@@ -111,7 +111,7 @@ class App extends Component {
 
     return (
       <div className='App'>
-        {/* <h1 className = 'appTitle'>Meet App</h1> */}
+        <h1 className = 'appTitle'>Meet App</h1>
         <h5>see upcoming events</h5>
         {/* Displays the Components */}
         <CitySearch 
