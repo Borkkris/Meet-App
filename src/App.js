@@ -23,6 +23,19 @@ class App extends Component {
 
   // to make the API call and save the initial data to state
   async componentDidMount() {
+    console.log("Component did mount")
+        // for the WarningAlert (Idk how to make it work, probably it needs access to the cache or so?)
+    if (!navigator.onLine) {
+      alert("You are offline")
+      this.setState({
+        warningText:
+          "List of events has been loaded from your cache! Please check your Internet connection!",
+        });
+      } else {
+        this.setState({
+          warningText: '',
+        });
+      }
   this.mounted = true;
   // trying to get the token from localStorage
   const accessToken = localStorage.getItem('access_token');
@@ -41,18 +54,6 @@ class App extends Component {
       }
     }); 
   }
-
-    // for the WarningAlert (Idk how to make it work, probably it needs access to the cache or so?)
-    if (!navigator.onLine) {
-      this.setState({
-        warningText:
-          "List of events has been loaded from your cache! Please check your Internet connection!",
-        });
-      } else {
-        this.setState({
-          warningText: '',
-        });
-      }
   }
 
   componentWillUnmount(){

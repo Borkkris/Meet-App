@@ -12,18 +12,12 @@ class NumberOfEvents extends Component {
                 numberOfEvents: actValue,
                 errorText: ' '
              });
-        } else if (actValue > 32 || actValue < 1) { // shows the error if the number is not between 1 and 32
+        } else { // shows the error if the number is not between 1 and 32
             this.setState({ 
                 numberOfEvents: 32,
                 errorText: 'Please choose a number between 1 and 32.'
             });
             actValue = 32;
-        } else { // hides the error if number is valid
-            this.setState({ 
-                numberOfEvents: undefined,
-                errorText: ' ' 
-            });
-            actValue = 1;
         }
         this.props.updateEvents(undefined, actValue);
     };
