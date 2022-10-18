@@ -26,7 +26,6 @@ class App extends Component {
     console.log("Component did mount")
         // for the WarningAlert (Idk how to make it work, probably it needs access to the cache or so?)
     if (!navigator.onLine) {
-      alert("You are offline")
       this.setState({
         warningText:
           "List of events has been loaded from your cache! Please check your Internet connection!",
@@ -36,6 +35,7 @@ class App extends Component {
           warningText: '',
         });
       }
+      
   this.mounted = true;
   // trying to get the token from localStorage
   const accessToken = localStorage.getItem('access_token');
@@ -43,9 +43,12 @@ class App extends Component {
   // If there’s an error in the object returned by checkToken(), the variable isTokenValid will be assigned with the value false; otherwise, it will be true
   const isTokenValid = (await checkToken(accessToken)).error ? false : true;
   const searchParams = new URLSearchParams(window.location.search);
+  console.log("isToken", isTokenValid)
+  console.log("searchParams", searchParams)
   // the application will be re-launched, only with the code parameter in the URL search field after your site’s domain
   const code = searchParams.get("code");
   this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+  console.log("showWelcomeScreen", this.state.showWelcomeScreen)
   if ((code || isTokenValid) && this.mounted) {
 
     getEvents().then((events) => {
@@ -71,6 +74,16 @@ class App extends Component {
   };
 
   updateEvents = (location, eventCount) => {
+    if (!navigator.onLine) {
+      this.setState({
+        warningText:
+          "List of events has been loaded from your cache! Please check your Internet connection!",
+        });
+      } else {
+        this.setState({
+          warningText: '',
+        });
+      }
     if (eventCount === undefined) {
       eventCount = this.state.numberOfEvents;
     } else (
