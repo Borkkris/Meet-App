@@ -23,8 +23,7 @@ class App extends Component {
 
   // to make the API call and save the initial data to state
   async componentDidMount() {
-    console.log("Component did mount")
-        // for the WarningAlert (Idk how to make it work, probably it needs access to the cache or so?)
+    // for the WarningAlert (Idk how to make it work, probably it needs access to the cache or so?)
     if (!navigator.onLine) {
       this.setState({
         warningText:
@@ -104,8 +103,12 @@ class App extends Component {
     }
 
   render() {
-    if (this.state.showWelcomeScreen === undefined) return <div className="App" />
+    //if (this.state.showWelcomeScreen === undefined) return <div className="App" />
     const { locations, numberOfEvents, events } = this.state;
+    console.log("Welcome",this.state.showWelcomeScreen)
+
+    if (!this.state.showWelcomeScreen) {
+
     return (
       <div className='App'>
         <h1 className = 'appTitle'>Meet App</h1>
@@ -131,17 +134,20 @@ class App extends Component {
               <XAxis type="category" dataKey="city" name="city" />
               <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
               <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-              <Scatter data={this.getData()} fill="#ffa500" />
+              <Scatter data={this.getData()} fill="#ffffff" />
             </ScatterChart>
           </ResponsiveContainer>
         </div>
 
         <EventList events={this.state.events} />
 
-        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-        getAccessToken={() => { getAccessToken() }} />
       </div>
-    );
+    )
+    }
+    else {
+        return (<WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+        getAccessToken={() => { getAccessToken() }} />)
+    }
   }
 }
 

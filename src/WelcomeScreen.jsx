@@ -5,7 +5,8 @@ function WelcomeScreen(props) {
   return props.showWelcomeScreen ?
     (
       <div className="WelcomeScreen">
-        <h1>Welcome to the Meet app</h1>
+        <h1 className = "appTitle">Meet App</h1> 
+        <h1 class="WelcomeHeading">Welcome to the Meet app</h1>
         <h4 class="loginText">
           Log in  to see upcoming events around the world for full-stack developers
       </h4>
@@ -26,9 +27,10 @@ function WelcomeScreen(props) {
             </button>
             </div>
         </div>
-        <a
+        <a 
           href="https://borkkris.github.io/meet/privacy.html"
           rel="nofollow noopener"
+          class="privacyPolicy"
         >
           Privacy policy
         </a>
