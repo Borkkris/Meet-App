@@ -246,6 +246,11 @@ color: #ffa500;
   overflow: visible;
 }
 
+.warningAlert {
+  font-weight: bold;
+  background-color: #ffffffd6;
+}
+
 .login-button {
   color: #494949;
   text-transform: uppercase;
