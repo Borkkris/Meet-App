@@ -36,6 +36,8 @@ const oAuth2Client = new google.auth.OAuth2(
  * as a URL parameter.
  *
  */
+
+/* 1) get Auth URL*/
 module.exports.getAuthURL = async () => {
   /**
    *
@@ -60,7 +62,7 @@ module.exports.getAuthURL = async () => {
   };
 };
 
-/*get the access token */
+/* 2) get the access token */
 module.exports.getAccessToken = async (event) => {
 // The values used to instantiate the OAuthClient are at the top of the file
   const oAuth2Client = new google.auth.OAuth2(
@@ -107,6 +109,7 @@ module.exports.getAccessToken = async (event) => {
     });
 };
 
+/* 3) get calendar events*/
 module.exports.getCalendarEvents = async (event) => {
 
   const oAuth2Client = new google.auth.OAuth2(
